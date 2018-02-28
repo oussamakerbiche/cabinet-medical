@@ -10,18 +10,22 @@
                         <li class="nav-item">Nouveau Rendez Vous</li>
                         <li class="nav-item" style="margin-left: 500px">N°</li>
                         
+                        <li class="nav-item" ><label> {{$numrdv -> num}}</label></li>
+                       
+
+                        
                     </ul>
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{url('rdv')}}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nom du patient</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="nom" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
