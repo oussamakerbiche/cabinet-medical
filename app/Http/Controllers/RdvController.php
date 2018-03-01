@@ -19,6 +19,7 @@ public function store(Request $request)
 {
   $rdv = new Rdv;
 $rdv -> nom = $request -> input('nom');
+$rdv -> num = $request -> input('num');
 $rdv -> save();
 return redirect('rdv');
    

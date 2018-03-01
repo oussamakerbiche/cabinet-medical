@@ -1,16 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+<script>
+
+     function my(){
+
+          var a = parseInt (document.getElementById('nbr').value) ;
+          document.getElementById('rslt').innerHTML = a + 1;
+          document.getElementById('rslt2').value = a + 1;
+
+
+    }
+    
+
+
+</script>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-auto mr-auto">
+            <div class="mycard1 card">
                 <div class="card-header">
-                    <ul class="nav nav-pills card-header-pills">
+                    <ul class="nav nav-pills nav-justified card-header-pills">
+                       
                         <li class="nav-item">Nouveau Rendez Vous</li>
-                        <li class="nav-item" style="margin-left: 500px">N°</li>
-                        
-                        <li class="nav-item" ><label> {{$numrdv -> num}}</label></li>
+                         <li class="nav-item"></li>
+                        <li class="nav-item"></li>
+                        <li class="myitem nav-item">N°</li>
+                        <p id="rslt"></p>
                        
 
                         
@@ -32,6 +50,8 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+                                <input hidden id="rslt2" type="text" name ="num">
+
                             </div>
                         </div>
 
@@ -50,6 +70,25 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <div class="col-auto">
+            <div class="mycard card">
+                <div class="card-header">
+                    <ul class="nav nav-pills card-header-pills">
+                        <li class="nav-item">Nouveau Rendez Vous</li>              
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+  <input hidden type="text" id="nbr" value="{{$numrdv -> num}}">
+
 @endsection
