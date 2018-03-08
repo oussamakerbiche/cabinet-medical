@@ -19,7 +19,17 @@
         
         @extends('layouts.app')
 
-        @section('content')
+        @section('content') 
+
+        @if(session()->has('success'))
+
+        <div class="alert alert-dismissible alert-success">
+            
+      <center>  {{session()->get('success') }} </center>
+
+
+        </div>
+        @endif
 
             <div class="content">
                 <div class="title m-b-md">
