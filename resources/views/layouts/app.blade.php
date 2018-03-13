@@ -12,7 +12,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/monCSS.css') }}" rel="stylesheet">
    <link rel="stylesheet" href="webfonts/css/fontawesome-all.min.css">
 </head>

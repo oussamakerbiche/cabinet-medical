@@ -14,3 +14,13 @@
 	text-align: right;
 
 }
+.badge-success {
+
+    background-color: #64dd17;
+}
+.mybg.badge.badge-success{
+
+    background-color: #28a745;
+
+
+}
