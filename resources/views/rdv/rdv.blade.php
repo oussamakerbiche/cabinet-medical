@@ -71,27 +71,39 @@
 
 <ul class="list-group">
 @foreach($rdvliste as $liste)
-     @if ($liste -> etat == 1 and $enatt-> num != $liste->num )
+     @if ($liste -> etat == 1 and $enatt-> num != $liste->num and $enatt-> num +1  != $liste->num)
 
   <li class="list-group-item d-flex justify-content-between align-items-center">
-  En attente&nbsp;
-    <span class="badge badge-primary badge-pill">{{$liste -> num}}</span>
+  <font>En attente&nbsp;</font>
+    <span class="badge badge-primary badge-pill">{{$liste -> num}} &nbsp;&nbsp;</span>
+    <i class="far fa-pause-circle" style="font-size:20px;color:#333333" ></i>
     </li> 
 
     @elseif($enatt-> num == $liste->num and  $liste -> etat == 1)
 
     <li class="list-group-item d-flex justify-content-between align-items-center">
-    En cours&nbsp;
-      <span class="badge badge-success badge-pill">{{$liste -> num}}</span>
-      <i class="material-icons" style="font-size:30px;color:#28A745">cached</i>
+    <i class="fas fa-arrow-right" style="font-size:20px;color:#28A745"></i>&nbsp;
+    <font style="color:#28A745"> En cours&nbsp;</font>
+      <span class="mybg badge badge-success badge-pill">{{$liste -> num}} &nbsp;&nbsp;</span>
+      
+      
     </li>
+    @elseif($enatt-> num +1  == $liste->num and  $liste -> etat == 1)
+
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <font style="color:#FFC107"> Suivant&nbsp;</font>
+        <span class="badge badge-warning badge-pill">{{$liste -> num}} &nbsp;&nbsp;</span>
+       
+        <i class="fas fa-bell"  style="font-size:20px;color:#FFC107"></i>
+        
+        </li>
     
-    @else
+    @else 
 
     <li class="list-group-item d-flex justify-content-between align-items-center">
-    Consulté&nbsp;
+    <font style="color:#64dd17"> Consulté&nbsp;</font>
       <span class="badge badge-success badge-pill">{{$liste -> num}}</span>
-      <i class="material-icons" style="font-size:30px;color:#28A745">check</i>
+      <i class="fas fa-check" style="font-size:20px;color:#64dd17" ></i>
     </li>
     @endif
   

@@ -12,8 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/monCSS.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="webfonts/css/fontawesome-all.min.css">
 </head>
 <body background="images/bg.jpg">
     <div id="app">
@@ -25,7 +26,7 @@
                 @guest
                 @else
                 <a class="nav-link" href="{{ url('listerdvs') }}">
-                    liste des rendez vous
+                    Liste des rendez vous
                 </a>
                 @endguest
 
