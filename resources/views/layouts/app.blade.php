@@ -13,14 +13,22 @@
     <!-- Styles -->
     <link href="{{ asset('css/theme.css') }}" rel="stylesheet">
     <link href="{{ asset('css/monCSS.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body background="images/bg.jpg" onload="my()">
+<body background="images/bg.jpg">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color: #E7EAEF;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('rdv') }}">
                     Prendre Rendez-Vous
                 </a>
+                @guest
+                @else
+                <a class="nav-link" href="{{ url('listerdvs') }}">
+                    liste des rendez vous
+                </a>
+                @endguest
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -73,5 +81,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 </body>
 </html>

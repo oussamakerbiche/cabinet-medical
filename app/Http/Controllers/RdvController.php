@@ -11,8 +11,23 @@ class RdvController extends Controller
 {
    public function index(){
      $num =  DB::table('rdvs')->latest()->first();
-   	return view('rdv.rdv', ['numrdv' => $num]);
+     $rdv = Rdv::all();
+     $enatt = DB::table('rdvs')->where('etat', '=', 1)->get()->first();
+     if   ($num == null){
+            return view('rdv.rdv', ['numrdv' => $num , 'rdvliste'=> $rdv ,'enatt'=>$enatt]);
+     }else{
+            $num->num = $num->num + 1 ;
+           
+            return view('rdv.rdv', ['numrdv' => $num , 'rdvliste'=> $rdv ,'enatt'=>$enatt]);
+     }
+   	
 
+   }
+
+   public function listerdvs()
+   {
+     $rdv = Rdv::all();
+     return view('rdv.listerdvs',['listerdv' => $rdv]);
    }
 
 
@@ -23,7 +38,21 @@ $rdv -> nom = $request -> input('nom');
 $rdv -> num = $request -> input('num');
 $rdv -> save();
 session()->flash('success','le rendez vous à été bien pris ');
-return redirect('/');
+return redirect('/rdv');
    
 }
+
+public function update(Request $request, $id){
+	$rdv = Rdv::find($id);
+	$rdv-> etat = 0;
+
+	$rdv->save();
+  return redirect('listerdvs');
+ 
+}
+
+
+
+
+
 }

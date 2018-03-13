@@ -17,6 +17,7 @@ class CreateRdvsTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->integer('num');
+            $table->integer('etat')->default(1);
             $table->timestamps();
         });
     }

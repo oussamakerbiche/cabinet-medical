@@ -22,11 +22,17 @@
         @section('content') 
 
         @if(session()->has('success'))
+        <!--
 
         <div class="alert alert-dismissible alert-success">
             
       <center>  {{session()->get('success') }} </center>
+                         -->
+                         <script>
+                             
+                             
 
+                         </script>
 
         </div>
         @endif
