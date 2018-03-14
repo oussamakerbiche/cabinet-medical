@@ -26,7 +26,9 @@ setlocale(LC_TIME, 'fra_fra');
  
 echo "Nous sommes le :<br>" ?>
 
-<div class="style"> <?php echo strftime('%A %d %B %Y'); ?> </div>
+<div class="style"> <?php echo strftime('%A %d %B %Y');
+
+?> </div>
 
 <?php 
 echo "<br>il est :";

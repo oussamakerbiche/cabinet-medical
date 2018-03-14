@@ -50,12 +50,26 @@ return redirect('/rdv');
 }
 
 public function update(Request $request, $id){
+  
 	$rdv = Rdv::find($id);
 	$rdv-> etat = 0;
 
 	$rdv->save();
   return redirect('listerdvs');
  
+}
+
+public function destroy(){
+
+  $enatt = DB::table('rdvs')->where('created_at', 'like', '2018-03-14%')->get();
+  $rdv = Rdv::all();
+  foreach ($rdv as $rd) {
+    $rd->delete();
+  }
+	
+
+	return redirect('listerdvs');
+
 }
 
 

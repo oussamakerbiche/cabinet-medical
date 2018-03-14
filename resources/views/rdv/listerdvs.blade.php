@@ -3,13 +3,14 @@
 @section('content')
 
 <div class="container">
+<div class="card border-primary mb-3" style="width: 100%;">
+  <div class="card-body">
+  <div style="float: left">le nombre total des rendez vous est : {{$nbrtotal}} </div>
+<div style="float: right">le nombre des patiens en attente est : {{$nbrenatt}}</div>
+ <div style="margin: 0 auto; width: 230px; color :#64dd17;">le nombre des patiens consultés : {{$nbrtotal - $nbrenatt}}</div>
 
-<blockquote class="blockquote text-center">
-
-<p class="mb-0">le nombre total des rendez vous est : {{$nbrtotal}}</p>
-<p class="mb-0">le nombre des patiens en attente est : {{$nbrenatt}}</p>
-<p class="mb-0 text-success">le nombre des patiens consultés : {{$nbrtotal - $nbrenatt}}</p>
-</blockquote>
+  </div>
+</div>
 
 </div>
 

@@ -19,6 +19,7 @@ class CreateRdvsTable extends Migration
             $table->integer('num');
             $table->integer('etat')->default(1);
             $table->timestamps();
+            $table->datetime('deleted_at')->nullable();
         });
     }
 
