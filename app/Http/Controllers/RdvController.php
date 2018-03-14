@@ -27,7 +27,14 @@ class RdvController extends Controller
    public function listerdvs()
    {
      $rdv = Rdv::all();
-     return view('rdv.listerdvs',['listerdv' => $rdv]);
+     
+     $nbrtotal = DB::table('rdvs')->count();
+
+     $nbrenatt = DB::table('rdvs')
+                ->where('etat','=', 1)
+                ->count();
+
+     return view('rdv.listerdvs',['listerdv' => $rdv , 'nbrtotal'=>$nbrtotal , 'nbrenatt' => $nbrenatt]);
    }
 
 

@@ -33,3 +33,25 @@
 	font-size: 18px;
 }
 
+table {
+    border-collapse: collapse;
+    width: 90%;
+    border: 1px solid black;
+
+}
+
+th, td{
+    text-align: center;
+    padding: 8px;
+    border: 1px solid black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+}
+
+th {
+    background-color: red;
+    color: black;
+    font-style: italic;
+    font-size: 22px;
+
+}

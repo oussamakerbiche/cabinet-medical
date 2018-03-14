@@ -2,33 +2,16 @@
 
 @section('content')
 
-<style>
+<div class="container">
 
-table {
-    border-collapse: collapse;
-    width: 90%;
-    border: 1px solid black;
-    margin-left: : 30px
-}
+<blockquote class="blockquote text-center">
 
-th, td{
-    text-align: center;
-    padding: 8px;
-    border: 1px solid black;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 18px;
-}
+<p class="mb-0">le nombre total des rendez vous est : {{$nbrtotal}}</p>
+<p class="mb-0">le nombre des patiens en attente est : {{$nbrenatt}}</p>
+<p class="mb-0 text-success">le nombre des patiens consultés : {{$nbrtotal - $nbrenatt}}</p>
+</blockquote>
 
-th {
-    background-color: red;
-    color: black;
-    font-style: italic;
-    font-size: 22px;
-
-}
- 
-
-</style>
+</div>
 
 <div class="container">
 	<div class="row">
