@@ -4,7 +4,117 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-auto mr-auto">
+
+      <div class="col-auto  mr-auto">
+            <div class="mycard card">
+                <div class="card-header">
+                    <ul class="nav nav-pills nav-justified  card-header-pills">
+                       <li class="mynavitem nav-item">La Date</li>           
+                    </ul>
+                </div>
+
+                <div class="card-body">
+
+
+
+
+
+
+<?php
+
+setlocale(LC_TIME, 'fra_fra'); 
+ 
+echo "Nous sommes le :<br>" ?>
+
+<div class="style"> <?php echo strftime('%A %d %B %Y'); ?> </div>
+
+<?php 
+echo "<br>il est :";
+// Récupère l'heure
+   date_default_timezone_set("Africa/Algiers");
+   $localtime = localtime();
+
+   $seconde =  $localtime[0];
+   $minute =  $localtime[1];
+   $heure =  $localtime[2];
+
+?>
+
+<SCRIPT>
+      
+      bcle=0;
+
+      function clock()
+      {
+        if (bcle == 0)
+        {
+          heure = <?php echo $heure ?>;
+          min = <?php echo $minute ?>;
+          sec = <?php echo $seconde ?>;
+        }
+        else
+        {
+          sec ++;
+          if (sec == 60)
+          {
+            sec=0;
+            min++;
+            if (min == 60)
+            {
+              min=0;
+              heure++;
+            };
+          };
+        };
+        txt="";
+        if(heure < 10)
+        {
+          txt += "0";
+        }
+        txt += heure+ ":";
+        if(min < 10)
+        {
+          txt += "0"
+        }
+        txt += min + ":";
+        if(sec < 10)
+        {
+          txt += "0"
+        }
+        txt += sec ;
+        timer = setTimeout("clock()",1000);
+        bcle ++;
+        document.clock.date.value = txt ;
+      }
+</SCRIPT>
+
+
+<STYLE TYPE="text/css">
+form{
+    display:inline;
+}
+.style {border-width: 0;background-color:#005A7B;color: #F2f2f2;}
+</STYLE>
+
+
+
+<!--  Charge la fonction dans le corps de la page  -->
+<BODY onLoad="clock()">
+
+<!--  Affiche l'heure  -->
+<form name="clock" onSubmit="0">
+
+<input type="text" name="date" size="5" readonly="true" class="style">
+</form>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-auto">
             <div class="mycard1 card">
                 <div class="card-header">
                    
@@ -69,6 +179,12 @@
 
 
 
+
+
+       
+
+
+<div class="listeposition">
 <ul class="list-group">
 @foreach($rdvliste as $liste)
      @if ($liste -> etat == 1 and $enatt-> num != $liste->num and $enatt-> num +1  != $liste->num)
@@ -109,22 +225,7 @@
   
 @endforeach
 </ul>
-
-
-
-
-        <div class="col-auto">
-            <div class="mycard card">
-                <div class="card-header">
-                    <ul class="nav nav-pills card-header-pills">
-                        <li class="nav-item">Nouveau Rendez Vous</li>              
-                    </ul>
-                </div>
-
-                <div class="card-body">
-                </div>
-            </div>
-        </div>
+</div>
 
     </div>
 </div>

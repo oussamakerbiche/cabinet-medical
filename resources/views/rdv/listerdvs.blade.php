@@ -32,8 +32,9 @@ th {
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
-<table class="table table-bordered">
+		<div class="col-md-12">	
+<div style="height:540px;overflow: scroll;">	
+<table class="table table-bordered" >
 				<thead>
 				     <tr>
 					     <th>Nom de patien</th>
@@ -42,7 +43,7 @@ th {
 					     <th>Actions</th>
 				      </tr>
 				</thead>
-				<tbody>
+				<tbody >
                 @foreach($listerdv as $li)
 					    <tr>
 					    	<td align="center">{{$li-> nom}}</td>
@@ -80,6 +81,12 @@ th {
 					    </tr>
 					 @endforeach
 
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 
 @endsection

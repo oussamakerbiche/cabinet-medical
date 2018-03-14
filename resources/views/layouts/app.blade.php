@@ -24,7 +24,7 @@
                 </a>
                 @guest
                 @else
-                <a class="nav-link" href="{{ url('listerdvs') }}">
+                <a class="navbar-brand" href="{{ url('listerdvs') }}">
                     Liste des rendez vous
                 </a>
                 @endguest

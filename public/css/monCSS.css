@@ -7,9 +7,11 @@
 .mycard1 {
 
 	width: 650px;
+	margin-right: 80px;
 	
  
 }
+
 .nav-justified .myitem{
 	text-align: right;
 
@@ -24,3 +26,10 @@
 
 
 }
+.listeposition{
+	margin-right: 15px;
+}
+.mynavitem {
+	font-size: 18px;
+}
+
